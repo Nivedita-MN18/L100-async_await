@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CPU Blocking UI Demo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 30px;
+            transition: background-color 0.3s;
+        }
+        button {
+            padding: 12px 18px;
+            font-size: 16px;
+            margin-right: 12px;
+            cursor: pointer;
+        }
+        #status {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+
+<h3> CPU Blocking Demo</h3>
+<button onclick="startCpuTask()">cpu Task</button>
+<button onclick="toggleColor()">toggle</button>
+<script>
+    let isBlue = false;
+    function toggleColor() {
+        document.body.style.backgroundColor = isBlue ? "#ffffff" : "#b3d9ff";
+        isBlue = !isBlue;
+    }
+    function startCpuTask() {
+        const end = Date.now() + 10000;
+        while (Date.now() < end) {
+            Math.sqrt(Math.random());
+        }
+    }
+</script>
+</body>
+</html>
