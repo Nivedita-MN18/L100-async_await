@@ -11,27 +11,22 @@ data.then(r=>console.log(r));
 function returnPromise() {
     return new Promise(r => {setTimeout(() => r("hello from promise"), 10000);});
 }
-
-// without async / await
+//   without async / await
 // function fun1() {
 //     console.log("fun1");
 //     const p = returnPromise();
-//     console.log(p.then(r => console.log(r)));   // a test
+//     p.then(console.log);   // a test
 //     console.log("bye...from fun1 ");
+// }
 //
-// }
-
 // with async / await
-async function fun2() {
-    console.log("fun2");
-    const result = await returnPromise();    //await cant be used w/o async .
-    console.log(result.then(r=>console.log(r)));
-    console.log("bye...from fun2 ");
-}
-// function timepass() {
-//     console.log("timepass");
+// async function fun2() {
+//     console.log("fun2");
+//     const result = await returnPromise();    //await cant be used w/o async .
+//     console.log(result);
+//     console.log("bye...from fun2 ");
 // }
-// fun1();
 
-fun2();
-// timepass();
+//
+// fun2();
+// fun1();
